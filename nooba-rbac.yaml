@@ -1,0 +1,12 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: nooba-edit
+subjects:
+  - kind: ServiceAccount
+    name: nooba
+    namespace: openshift-storage
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: edit
